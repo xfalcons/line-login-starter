@@ -108,7 +108,7 @@ public class LineAPIService {
             throw new RuntimeException(e);
         }
 
-        return "https://access.line-beta.me/oauth2/v2.1/authorize?response_type=code"
+        return "https://access.line.me/oauth2/v2.1/authorize?response_type=code"
                 + "&client_id=" + channelId
                 + "&redirect_uri=" + encodedCallbackUrl
                 + "&state=" + state
@@ -121,7 +121,7 @@ public class LineAPIService {
         try {
             JWT.require(
                 Algorithm.HMAC256(channelSecret))
-                .withIssuer("https://access.line-beta.me")
+                .withIssuer("https://access.line.me")
                 .withAudience(channelId)
                 .withClaim("nonce", nonce)
                 .build()
@@ -137,7 +137,7 @@ public class LineAPIService {
     }
 
     private <R> R getClient(final Function<LineAPI, Call<R>> function) {
-        return Client.getClient("https://api.line-beta.me/", LineAPI.class, function);
+        return Client.getClient("https://api.line.me/", LineAPI.class, function);
     }
 
 }
