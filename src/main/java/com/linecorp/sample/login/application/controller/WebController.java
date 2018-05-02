@@ -62,7 +62,7 @@ public class WebController {
         final String nonce = CommonUtils.getToken();
         httpSession.setAttribute(LINE_WEB_LOGIN_STATE, state);
         httpSession.setAttribute(NONCE, nonce);
-        final String url = lineAPIService.getLineWebLoginUrl(state, nonce, Arrays.asList("openid", "profile"));
+        final String url = lineAPIService.getLineWebLoginUrl(state, nonce, Arrays.asList("openid", "profile", "email"));
         return "redirect:" + url;
     }
 
