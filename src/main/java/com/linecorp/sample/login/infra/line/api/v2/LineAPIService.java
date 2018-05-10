@@ -114,7 +114,7 @@ public class LineAPIService {
                 + "&state=" + state
                 + "&scope=" + scope
                 + "&prompt=consent"
-                + "&bot_prompt=normal"
+                + "&bot_prompt=aggressive"
                 + "&nonce=" + nonce;
     }
 
