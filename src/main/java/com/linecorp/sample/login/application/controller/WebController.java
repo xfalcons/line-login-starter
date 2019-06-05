@@ -71,9 +71,10 @@ public class WebController {
         // return "redirect:" + url;
 
         HttpHeaders headers = new HttpHeaders();
-//        headers.add("Content-Type", "text/html; charset=utf-8");
+        headers.add("Cache-Control", "private");
+        headers.add("Content-Type", "text/html; charset=utf-8");
         headers.add("Location", "https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1506488852&redirect_uri=https%3a%2f%2fwww.tutorabc.com%2fCenter%2fSocial%2fLineCallBack&state=6231d705-1590-4fa6-bb34-197f2ea75000&scope=openid%20profile%20email%20phone&bot_prompt=normal&max_age=260000");
-        return new ResponseEntity<String>(headers, HttpStatus.FOUND);
+        return new ResponseEntity<String>("Hello World !!! WTTTTTTTTT", headers, HttpStatus.FOUND);
     }
 
     /**
