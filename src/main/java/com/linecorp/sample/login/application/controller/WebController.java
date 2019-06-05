@@ -71,6 +71,7 @@ public class WebController {
         // return "redirect:" + url;
 
         HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "text/html; charset=utf-8");
         headers.add("Location", url);    
         return new ResponseEntity<String>("Hello World!!!", headers, HttpStatus.FOUND);
     }
