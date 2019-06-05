@@ -72,7 +72,7 @@ public class WebController {
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", url);    
-        return new ResponseEntity<String>(headers, HttpStatus.FOUND);
+        return new ResponseEntity<String>("Hello World!!!", headers, HttpStatus.FOUND);
     }
 
     /**
