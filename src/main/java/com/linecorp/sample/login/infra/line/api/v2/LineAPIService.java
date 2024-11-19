@@ -98,7 +98,7 @@ public class LineAPIService {
         }
     }
 
-    public String getLineWebLoginUrl(String state, String nonce, List<String> scopes) {
+    public String getLineWebLoginUrl(String state, String nonce, List<String> scopes, Integer max_age) {
         final String encodedCallbackUrl;
         final String scope = String.join("%20", scopes);
 
@@ -113,6 +113,7 @@ public class LineAPIService {
                 + "&redirect_uri=" + encodedCallbackUrl
                 + "&state=" + state
                 + "&scope=" + scope
+                + "&max_age=" + max_age
                 + "&nonce=" + nonce;
     }
 
